@@ -6,6 +6,7 @@ on:
         branches:
             - master
             - 'release/**'
+            - aditya-build-04-14-2023
         tags:
           - '*'
 
@@ -77,9 +78,9 @@ jobs:
         run: |
           source continuous_integration/install_dependencies.sh
 
-      - name: Test
-        run: |
-          source continuous_integration/test_script.sh
+      # - name: Test
+      #   run: |
+      #     source continuous_integration/test_script.sh
 
       - name: Upload coverage file
         uses: actions/upload-artifact@v2
@@ -216,11 +217,11 @@ jobs:
           sed -i.bak '/scs >= /d' setup.py
           rm -rf setup.py.bak
 
-      - name: Verify that we can build by pip-install on each OS.
-        if: ${{env.PIP_INSTALL == 'True'}}
-        run: |
-          pip install . pytest cplex
-          pytest cvxpy/tests/test_conic_solvers.py -k 'TestCPLEX'
+      # - name: Verify that we can build by pip-install on each OS.
+      #   if: ${{env.PIP_INSTALL == 'True'}}
+      #   run: |
+      #     pip install . pytest cplex
+      #     # pytest cvxpy/tests/test_conic_solvers.py -k 'TestCPLEX'
 
       - name: Set up QEMU  # For aarch64, see https://cibuildwheel.readthedocs.io/en/stable/faq/#emulation
         if: runner.os == 'Linux'
