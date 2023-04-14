@@ -204,7 +204,7 @@ canon = Extension(
 )
 
 setup(
-    name='cvxpy',
+    name='tyba-cvxpy',
     version=str(VERSION),
     author='Steven Diamond, Eric Chu, Stephen Boyd',
     author_email='stevend2@stanford.edu, akshayka@cs.stanford.edu, '
