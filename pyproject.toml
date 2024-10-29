@@ -39,7 +39,7 @@ build-backend = "setup.build_meta"  # just re-exports setuptools.build_meta defi
 backend-path = ["."]
 
 [project]
-name = "cvxpy"
+name = "tyba-cvxpy"
 description = "A domain-specific language for modeling convex optimization problems in Python."
 dependencies = [
     "osqp >= 0.6.2",
